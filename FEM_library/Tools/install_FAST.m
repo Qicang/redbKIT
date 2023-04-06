@@ -35,6 +35,7 @@ if nargin < 1 || isempty(hasOpenMP)
 end
 
 %% Download FAST
+system("rm -rf stenglib");
 url_FAST = 'https://github.com/stefanengblom/stenglib.git';
 system('git clone https://github.com/stefanengblom/stenglib.git');
 fprintf('Download and cone parallel FAST from\n%s\n...\n',url_FAST);
