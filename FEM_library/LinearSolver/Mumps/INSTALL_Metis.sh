@@ -10,9 +10,12 @@ mkdir -p Metis
 
 cd Metis
 
-wget http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz
+wget https://ftp.mcs.anl.gov/pub/petsc/externalpackages/metis-5.1.0-p3.tar.gz
 
-tar -xvzf metis-5.1.0.tar.gz
+
+tar -xvzf metis-5.1.0-p3.tar.gz
+
+mv metis-5.1.0-p3 metis-5.1.0
 
 mkdir -p metis-5.1.0-install
 

@@ -19,6 +19,8 @@ Problems/RB_EIM_Gaussian/EIM/
 Problems/RB_EIM_Gaussian/Figures/
 Problems/RB_EIM_Gaussian/FOM.mat
 FEM_library/Tools/Fast/
+FEM_library/Mesh/metis*
+FEM_library/Tools/stenglib
 Problems/RB_CSM_Turek2D/Snapshots/
 Problems/RB_CSM_ShearCube/Snapshots/
 Problems/RB_AcousticHorn_Affine/Figures/

@@ -8,10 +8,10 @@ mkdir -p MUMPS
 
 cd MUMPS
 
-wget http://mumps.enseeiht.fr/MUMPS_5.0.1.tar.gz
+wget https://ftp.mcs.anl.gov/pub/petsc/externalpackages/MUMPS_5.0.1-p1.tar.gz
 
-tar -xzf MUMPS_5.0.1.tar.gz
-
+tar -xzf MUMPS_5.0.1-p1.tar.gz 
+mv MUMPS_5.0.1-p1 MUMPS_5.0.1
 cd MUMPS_5.0.1
 
 cp ../../Makefile_MUMPS.inc Makefile.inc
@@ -38,6 +38,8 @@ make d
 cd ../MATLAB
 
 export mexPath=$(which mex)
+
+echo "The path is" $mexPath
 
 make clean
 

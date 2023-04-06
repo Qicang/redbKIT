@@ -35,11 +35,11 @@ if nargin < 1 || isempty(hasOpenMP)
 end
 
 %% Download FAST
-url_FAST = 'http://user.it.uu.se/cgi-bin/cgiwrap/~stefane/countFast.cgi?Fsparse_tests.tar';
+url_FAST = 'https://github.com/stefanengblom/stenglib.git';
+system('git clone https://github.com/stefanengblom/stenglib.git');
+fprintf('Download and cone parallel FAST from\n%s\n...\n',url_FAST);
 
-fprintf('Download and untar parallel FAST from\n%s\n...\n',url_FAST);
-
-untar(url_FAST);
+%untar(url_FAST);
 
 if ispc
     sslash = '\';
@@ -47,22 +47,22 @@ elseif isunix
     sslash = '/';
 end
 
-addpath(genpath(strcat(pwd,sslash,'Fast')));
+addpath(genpath(strcat(pwd,sslash,'stenglib',sslash,'Fast')));
 
-cd Fast/
-
+cd stenglib/Fast
+startup;
 if hasOpenMP
     
     fprintf('\nCompiling FAST with openmp enabled\n');
-    make('openmp',true,'fsparseonly',1);
+    make('openmp',true,'fsparseonly',true);
 
 else
     
     fprintf('\nCompiling FAST without openmp\n');
-    make('openmp',false,'fsparseonly',1);
+    make('openmp',false,'fsparseonly',false);
 
 end
 
-cd ../
+cd ../../
 
 end
